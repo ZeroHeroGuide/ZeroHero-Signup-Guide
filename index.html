@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ZeroHero phone sign-up and battery programming guide for GloBird Energy sales agents.">
+<title>ZeroHero Phone Sign-Up &amp; Battery Setup Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#fdf6fa; --card:#ffffff; --ink:#2a1622; --muted:#6f5a66; --line:#f0dbe7;
+  --pink:#ec008c; --pink-deep:#b8006d; --pink-soft:#fde3f2;
+  --orange:#fbae47; --orange-soft:#fff1dd; --orange-ink:#8a4f00;
+  --green:#0b7a5e; --green-soft:#e2f4ec;
+  --display:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 60px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(253,246,250,.92);backdrop-filter:blur(6px);padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.brandline{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:760px;margin:0 auto;padding:0 16px}
+.brand{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
+.audience{font-size:12.5px;color:var(--muted)}
+nav.toc{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 0;max-width:760px;margin:0 auto;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;font-size:12.5px;font-weight:700;color:var(--pink-deep);background:var(--pink-soft);border-radius:99px;padding:6px 12px;text-decoration:none;white-space:nowrap}
+.hero{padding:28px 0 6px;text-align:center}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,32px);margin:0 0 8px;color:var(--ink);text-wrap:balance}
+.sub{color:var(--muted);font-size:16px;max-width:520px;margin:0 auto}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;margin:18px 0;box-shadow:0 10px 30px -22px rgba(184,0,109,.35)}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink)}
+h2{font-family:var(--display);font-weight:800;font-size:22px;margin:4px 0 14px;color:var(--ink)}
+h2 .hl{color:var(--pink)}
+h3{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 6px;color:var(--ink)}
+p{margin:0 0 10px}
+.small{font-size:13.5px;color:var(--muted)}
+.checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+.cb{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);flex:none;margin-top:1px}
+.points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.points li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start}
+.tick{width:26px;height:26px;border-radius:50%;background:var(--pink-soft);display:grid;place-items:center;margin-top:1px;flex:none}
+.tick svg{width:14px;height:14px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--orange-soft);color:var(--orange-ink);font-weight:700;font-size:13.5px;padding:5px 11px;border-radius:99px;margin:2px 4px 2px 0}
+.pill.pink{background:var(--pink-soft);color:var(--pink-deep)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:center;padding:12px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--pink);color:#fff;font-family:var(--display);font-weight:800;font-size:16px;display:grid;place-items:center;flex:none}
+.steps b{display:block;font-size:15px}
+.steps span{font-size:13px;color:var(--muted)}
+.sch-set{background:var(--orange-soft);border-radius:14px;padding:14px 16px;display:grid;gap:8px;margin:10px 0}
+.sch-h{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--orange-ink)}
+.sch-row{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:center;font-size:14.5px}
+.sch-tm{font-weight:800;background:#fff;border-radius:8px;padding:4px 8px;text-align:center;font-size:13px}
+.path{border:1.5px solid var(--line);border-radius:16px;padding:16px;margin:10px 0}
+.path.rec{border-color:var(--pink)}
+.path .tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--pink);padding:3px 9px;border-radius:99px;display:inline-block;margin-bottom:8px}
+details.brand{border:1px solid var(--line);border-radius:12px;background:var(--bg);margin-top:8px;overflow:hidden}
+details.brand summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-weight:700;font-size:14.5px}
+details.brand summary::-webkit-details-marker{display:none}
+details.brand summary::after{content:"+";font-weight:800;color:var(--pink)}
+details.brand[open] summary::after{content:"–"}
+details.brand .b{padding:0 14px 14px;font-size:14px;color:var(--ink)}
+.brandgrid{display:grid;gap:8px;margin-top:10px}
+.note{font-size:13.5px;line-height:1.45;padding:12px 14px;border-radius:12px;background:var(--orange-soft);border:1.5px solid var(--orange);color:var(--ink);margin:10px 0}
+.note.alt{background:var(--pink-soft);border-color:var(--pink)}
+.note.g{background:var(--green-soft);border-color:var(--green)}
+.note strong{color:var(--orange-ink)}
+.contact{display:grid;gap:10px;margin:10px 0}
+.contact .box{display:grid;gap:3px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px}
+.who{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.cname{font-size:16px;font-weight:800;font-family:var(--display)}
+.phone{font-size:19px;font-weight:800;color:var(--pink-deep);text-decoration:none}
+.mail{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.refer{background:var(--ink);color:#fff;border-radius:16px;padding:18px;margin:10px 0}
+.refer b{display:block;font-family:var(--display);font-size:18px;margin-bottom:6px}
+.refer p{font-size:14px;opacity:.9;margin:0}
+.faq{border-top:1px solid var(--line);padding:12px 0}
+.faq:first-child{border-top:0;padding-top:0}
+.faq b{display:block;font-size:14.5px;margin-bottom:4px}
+.faq p{font-size:14px;color:var(--ink);margin:0}
+.script{background:var(--bg);border-left:3px solid var(--pink);border-radius:0 10px 10px 0;padding:10px 14px;font-size:14.5px;font-style:italic;color:var(--ink);margin:10px 0}
+a{color:var(--pink-deep)}
+footer{text-align:center;padding:30px 0 10px;font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brandline"><span class="brand">GloBird Energy · Internal</span><span class="audience">For phone sign-ups — new &amp; existing customers</span></div>
+  <nav class="toc">
+    <a href="#qualify">Qualify</a>
+    <a href="#pitch">The Pitch</a>
+    <a href="#signup">Sign Up</a>
+    <a href="#programming">Programming</a>
+    <a href="#referral">Referral</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#faq">Objections</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>ZeroHero Phone Sign-Up &amp; Battery Setup Guide</h1>
+    <p class="sub">Everything you need on one call: qualifying, the pitch, signing up, and walking the customer through programming their battery — for brand-new customers and existing GloBird customers switching plans.</p>
+  </div>
+
+  <section class="card" id="qualify">
+    <span class="eyebrow">Step 0</span>
+    <h2>Before you pitch — qualify the customer</h2>
+    <ul class="checklist">
+      <li><span class="cb"></span><span>Confirm they have <strong>solar AND a home battery</strong> — ZeroHero only applies to battery customers.</span></li>
+      <li><span class="cb"></span><span>Ask their <strong>battery brand and model</strong> (have the brand list from the Programming section ready).</span></li>
+      <li><span class="cb"></span><span>Check whether they're a <strong>new customer</strong> (switching from another retailer) or an <strong>existing GloBird customer</strong> (simple plan change — faster, no switch delay).</span></li>
+    </ul>
+    <div class="script">"Just to check — do you have a home battery installed alongside your solar? And do you know the brand?"</div>
+  </section>
+
+  <section class="card" id="pitch">
+    <span class="eyebrow">Step 1</span>
+    <h2>The pitch — <span class="hl">3 ways to save</span>, every day</h2>
+    <ul class="points">
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" stroke="#ec008c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>Free power, 12pm–3pm</strong> — charge the battery and run big appliances for free, up to 50 kWh/day.</p></li>
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" stroke="#ec008c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>$1 a day credit, 6pm–9pm</strong> — just by running the home off the battery (up to $365/year).</p></li>
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10" stroke="#ec008c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><strong>Optional 10c/kWh feed-in, 6pm–9pm</strong> — sell excess battery power, first 15 kWh/day (up to $547.50/year).</p></li>
+    </ul>
+    <div class="pill">Free to join</div><div class="pill">No lock-in</div><div class="pill">No exit fees</div><div class="pill">We handle the switch</div>
+    <p class="small" style="margin-top:10px">Mention if relevant: rare <strong>Critical Events</strong> (price spikes) pay $1/kWh to sell or 5c/kWh to charge for ~5 minutes — optional, GloBird app only.</p>
+  </section>
+
+  <section class="card" id="signup">
+    <span class="eyebrow">Step 2</span>
+    <h2>Signing them up</h2>
+    <ol class="steps">
+      <li><b>Send the quote</b><span>Email "Your Quote from GloBird Energy" — or action their plan change directly if already a GloBird customer.</span></li>
+      <li><b>They tap Join Now</b><span>Takes a few minutes. Stay on the line if they'd like help.</span></li>
+      <li><b>Collect battery details</b><span>Brand, model, and serial number if their chosen app needs it.</span></li>
+      <li><b>Choose how they'll manage the battery</b><span>GloBird's app (we schedule it) or their battery's own app (they schedule it) — "not sure yet" is fine too, they can decide after signing up.</span></li>
+    </ol>
+    <div class="note g"><strong>Reassure them:</strong> no lock-in contract, no exit fees, we handle the switch with their old retailer, and their power is never interrupted.</div>
+  </section>
+
+  <section class="card" id="programming">
+    <span class="eyebrow">Step 3 · The important bit</span>
+    <h2>Battery <span class="hl">programming</span> instructions</h2>
+    <p>The battery will <strong>not</strong> charge from the grid on its own — talk the customer through setting a schedule (or "programming") so it actually uses the free window.</p>
+    <div class="sch-set">
+      <span class="sch-h">What to set, whichever app they use</span>
+      <div class="sch-row"><span class="sch-tm">12pm–3pm</span><span>Charge from the grid, up to 100%</span></div>
+      <div class="sch-row"><span class="sch-tm">6pm–9pm</span><span>Optional: sell excess power</span></div>
+    </div>
+
+    <div class="path rec">
+      <span class="tag">If using GloBird's app</span>
+      <ol class="steps">
+        <li><b>Join the VPP</b><span>Can be done during sign-up or later in-app — <a href="https://www.globirdenergy.com.au/join-vpp/" target="_blank" rel="noopener">globirdenergy.com.au/join-vpp</a></span></li>
+        <li><b>Watch the 2-minute setup video</b><span>Shows the 3 modes and how to set times — <a href="https://www.globirdenergy.com.au/energy-saver/zerohero-app/" target="_blank" rel="noopener">globirdenergy.com.au/energy-saver/zerohero-app</a></span></li>
+      </ol>
+      <p class="small" style="margin-top:8px"><strong>3 modes to explain:</strong> Self-consumption (default — battery just powers the home), Schedule (customer sets the charge/sell times themselves), Auto (GloBird charges and, within limits the customer sets, can sell for them).</p>
+    </div>
+
+    <div class="path">
+      <span class="tag" style="background:var(--muted)">If using their own battery's app</span>
+      <p>Point them to our brand guides, or suggest their installer/manufacturer if their brand isn't listed: <a href="https://www.globirdenergy.com.au/battery-scheduling/" target="_blank" rel="noopener">globirdenergy.com.au/battery-scheduling</a></p>
+      <p class="small">In every brand's app, the customer is looking for the same thing: a <strong>charge/discharge schedule or timer</strong> setting, usually under Settings → Battery → Schedule (or "TOU" / time-of-use). Walk them to add the two time blocks above.</p>
+      <div class="brandgrid">
+        <details class="brand"><summary>AlphaESS</summary><div class="b">In the AlphaESS app: Settings → Battery → Working Mode → set a charge period 12–3pm and (optional) a discharge/export period 6–9pm.</div></details>
+        <details class="brand"><summary>Anker</summary><div class="b">In the Anker app: Home → Schedule → add a charge block 12–3pm; enable backup/export for 6–9pm if supported on their model.</div></details>
+        <details class="brand"><summary>FoxESS</summary><div class="b">In FoxESS Cloud / app: Settings → Work Mode → Force Charge 12–3pm; set Feed-in priority or export limit for 6–9pm.</div></details>
+        <details class="brand"><summary>Neovolt</summary><div class="b">In the Neovolt app: Battery Settings → Time of Use → add charge window 12–3pm and export window 6–9pm.</div></details>
+        <details class="brand"><summary>Redback</summary><div class="b">In the Redback Ouija/app: Schedule tab → set grid charge 12–3pm; set export/discharge priority 6–9pm.</div></details>
+        <details class="brand"><summary>SAJ</summary><div class="b">In the SAJ eSolar app: Work Mode → Time-based Control → add charge 12–3pm and discharge/export 6–9pm.</div></details>
+        <details class="brand"><summary>Sigenergy</summary><div class="b">In the sigenCloud app: Energy Strategy → Custom → add a charge period 12–3pm and an export period 6–9pm.</div></details>
+        <details class="brand"><summary>SolaX</summary><div class="b">In SolaX Cloud: Settings → Work Mode → Manual/Force Time → charge 12–3pm; Feed-in priority 6–9pm.</div></details>
+        <details class="brand"><summary>Solis + Dyness</summary><div class="b">In the SolisCloud app: Settings → Energy Storage Control → Time-Charging 12–3pm; set export preference 6–9pm.</div></details>
+        <details class="brand"><summary>Sungrow</summary><div class="b">In the iSolarCloud app: Settings → Battery → Forced charge/discharge → charge 12–3pm; discharge/export 6–9pm.</div></details>
+        <details class="brand"><summary>WHES (eCactus)</summary><div class="b">In the eCactus app: Energy Management → Schedule → add charge block 12–3pm and export block 6–9pm.</div></details>
+      </div>
+      <p class="small" style="margin-top:10px">Menu names vary by firmware version — if the customer can't find it, their installer or the brand's own support line is the fastest fix.</p>
+    </div>
+
+    <div class="note alt"><strong>Not sure yet?</strong> That's fine — they can sign up now and decide later. Nothing needs to be programmed before the plan starts; they just won't see the savings kick in until it is.</div>
+    <p class="small">Common pitfall to mention: running the battery flat overnight means buying grid power until solar restarts — encourage big loads (washing, dishwasher, EV charging) in the free midday window instead.</p>
+  </section>
+
+  <section class="card" id="referral">
+    <span class="eyebrow">Worth mentioning</span>
+    <h2>The referral program</h2>
+    <div class="refer">
+      <b>They get $50. Their friend gets $50.</b>
+      <p>For every friend or family member who joins after them, they get $50 off their bill and the referred person gets $50 off theirs. They can refer through their app, by emailing their agent, or the friend can simply call 133 456 and mention who referred them.</p>
+    </div>
+  </section>
+
+  <section class="card" id="contacts">
+    <span class="eyebrow">Keep handy</span>
+    <h2>Contacts</h2>
+    <div class="contact">
+      <div class="box"><span class="who">Customer service</span><span class="cname">GloBird Energy</span><a class="phone" href="tel:133456">133 456</a><a class="mail" href="mailto:cs@globirdenergy.com.au">cs@globirdenergy.com.au</a></div>
+    </div>
+    <p class="small">If the customer wants to think it over, offer to email the quote and the <a href="https://www.globirdenergy.com.au/energy-saver/zerohero-testimonials/" target="_blank" rel="noopener">customer testimonials page</a> so they can review at their own pace.</p>
+  </section>
+
+  <section class="card" id="faq">
+    <span class="eyebrow">Common questions</span>
+    <h2>Handling objections</h2>
+    <div class="faq"><b>"What if it's cloudy and my battery doesn't fill up?"</b><p>They can still charge from the grid for free in the 12pm–3pm window — solar isn't required to get the free power.</p></div>
+    <div class="faq"><b>"Is there a lock-in contract?"</b><p>No lock-in and no exit fees — free to join, free to leave.</p></div>
+    <div class="faq"><b>"Will my power be interrupted while switching?"</b><p>No — the switch happens in the background and supply is never interrupted. We'll also confirm by message once it's complete.</p></div>
+    <div class="faq"><b>"Do I have to sell my power back?"</b><p>No — the 10c/kWh feed-in is entirely optional. The $1/day and free power apply regardless.</p></div>
+    <div class="faq"><b>"My brand isn't on the app list — can I still join?"</b><p>Yes — they still get all 3 main savings using their own battery app; we'll notify them if their brand becomes supported later.</p></div>
+  </section>
+
+  <footer>Internal sales reference · GloBird Energy ZeroHero plan</footer>
+</div>
+</body>
+</html>
